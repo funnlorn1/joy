@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="theme-color" content="#101426">
+  <title>Territory Rush</title>
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Territory Rush"><span class="brand-mark">▰</span> TERRITORY<span>RUSH</span></a>
+      <div class="top-stats">
+        <div><small>ТВОЯ ТЕРРИТОРИЯ</small><b id="areaStat">0.0%</b></div>
+        <div><small>ПОЗИЦИЯ</small><b id="rankStat">1 / 5</b></div>
+        <div><small>РЕКОРД</small><b id="bestStat">0.0%</b></div>
+      </div>
+      <button class="icon-btn" id="soundBtn" title="Звук" aria-label="Звук">♫</button>
+    </header>
+    <main class="game-layout">
+      <section class="arena-wrap">
+        <canvas id="arena" aria-label="Игровое поле"></canvas>
+        <div class="arena-vignette"></div>
+        <div class="hud-left">
+          <div class="live-pill"><i></i> LIVE MATCH</div>
+          <div class="hint" id="hint">Захватывай свободное пространство и возвращайся на свою территорию</div>
+        </div>
+        <div class="hud-right">
+          <button class="small-btn" id="pauseBtn">Ⅱ ПАУЗА</button>
+          <button class="small-btn" id="restartBtn">↻ ЗАНОВО</button>
+        </div>
+        <div class="center-overlay" id="overlay">
+          <div class="dialog">
+            <div class="eyebrow">ARCADE TERRITORY BATTLE</div>
+            <h1 id="overlayTitle">ЗАХВАТИ<br><em>КАРТУ</em></h1>
+            <p id="overlayText">Исследуй большую карту, захватывай территории и полностью заполняй страны.</p>
+            <div class="key-help"><span>W A S D</span><span>или</span><span>СТРЕЛКИ</span><small>управление движением</small></div>
+            <button class="primary-btn" id="startBtn">НАЧАТЬ ИГРУ <b>→</b></button>
+          </div>
+        </div>
+        <div class="mobile-pad" id="mobilePad">
+          <button data-dir="up">▲</button><div><button data-dir="left">◀</button><button data-dir="down">▼</button><button data-dir="right">▶</button></div>
+        </div>
+      </section>
+      <aside class="sidebar">
+        <section class="side-card">
+          <div class="side-title">ТАБЛИЦА ЛИДЕРОВ <span class="live-dot"></span></div>
+          <div id="leaderboard" class="leaderboard"></div>
+        </section>
+        <section class="side-card mission">
+          <div class="side-title">ТВОЯ ЦЕЛЬ</div>
+          <div class="goal-number" id="goalNumber">20<span>%</span></div>
+          <p>Захвати больше территории, чем любой соперник.</p>
+          <div class="progress"><i id="goalProgress"></i></div>
+          <small id="goalLabel">0% из 20%</small>
+        </section>
+        <section class="side-card countries-card">
+          <div class="side-title">ЗАПОЛНЕНИЕ СТРАН <span class="live-dot"></span></div>
+          <div id="countryList" class="country-list"></div>
+        </section>
+        <section class="side-card controls-card">
+          <div class="side-title">УПРАВЛЕНИЕ</div>
+          <div class="control-row"><span class="keycap">W</span><span class="keycap">A</span><span class="keycap">S</span><span class="keycap">D</span><p>Движение</p></div>
+          <div class="control-row"><span class="keycap wide">SPACE</span><p>Пауза</p></div>
+          <p class="tip">Подсказка: короткие вылазки безопаснее длинных. Пока твой хвост открыт — ты уязвим.</p>
+        </section>
+        <div class="side-footer">TERRITORY RUSH <span>v1.0</span><br><small>Локальная игра · боты</small></div>
+      </aside>
+    </main>
+  </div>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
